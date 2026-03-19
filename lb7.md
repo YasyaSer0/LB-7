@@ -260,3 +260,66 @@ MBR і GPT - це способи розмітки дисків.
 | lsmod | Показує список завантажених модулів ядра Linux. |
 | fdisk -l | Виводить інформацію про диски та їх розділи (partition table) у неінтерактивному режимі. |
 | /proc/cpuinfo | Системний файл, що містить детальну інформацію про процесор. |
+
+### 3. Створення скриптових сценаріїв з виводом текстових повідомлень для користувача
+
+#### Сценарій 1: Виведення привітання для користувача
+
+У цьому завданні було створено скриптовий сценарій, який виводить привітання для поточного користувача, поточну дату та базову інформацію про систему.
+
+**Хід виконання**
+
+Створення нового файлу скрипта:
+```bash
+nano greeting.sh
+```
+
+<img width="872" height="565" alt="image" src="https://github.com/user-attachments/assets/1b43a640-c358-4ed0-b7c5-8c334c903afe" />
+
+Скрін 1: відкритий редактор nano з назвою файлу greeting.sh
+
+Додавання коду у файл:
+```bash
+#!/bin/bash
+
+echo "Hello, $USER!"
+echo "Today is: $(date)"
+echo "System information:"
+uname -a
+```
+
+<img width="337" height="164" alt="image" src="https://github.com/user-attachments/assets/4b87e920-75b0-41a2-a7e9-1e57ff9f451d" />
+
+Скрін 2: код скрипта у редакторі nano
+
+Збереження файлу:
+```bash
+Ctrl + O → Enter
+
+Ctrl + X
+```
+
+Надання прав на виконання:
+```bash
+chmod +x greeting.sh
+```
+
+<img width="754" height="49" alt="image" src="https://github.com/user-attachments/assets/bb742868-6f4b-46a7-a80c-860e924892b9" />
+
+Скрін 4: команда chmod у терміналі
+
+Запуск скрипта:
+```bash
+./greeting.sh
+```
+
+<img width="1206" height="249" alt="image" src="https://github.com/user-attachments/assets/8924f886-aa18-451d-9363-cf0eda59ac7a" />
+
+Скрін 5: результат виконання скрипта
+
+Пояснення коду
+- #!/bin/bash - вказує, що скрипт виконується у оболонці Bash
+- echo "Hello, $USER!" - виводить привітання з ім’ям користувача
+- $(date) - підставляє поточну дату і час
+- uname -a - виводить інформацію про систему (ОС, ядро, архітектура)
+  
