@@ -276,7 +276,7 @@ nano greeting.sh
 
 <img width="872" height="565" alt="image" src="https://github.com/user-attachments/assets/1b43a640-c358-4ed0-b7c5-8c334c903afe" />
 
-Скрін 1
+Скрін 1: відкритий редактор nano з назвою файлу greeting.sh
 
 Додавання коду у файл:
 ```bash
@@ -336,7 +336,7 @@ nano hardware.sh
 
 <img width="511" height="38" alt="image" src="https://github.com/user-attachments/assets/817b66a1-d41a-4ea1-aa75-33df4c427931" />
 
-Скрін 1: відкритий редактор nano з назвою файлу hardware.sh
+Скрін 1
 
 Додавання коду у файл:
 ```bash
