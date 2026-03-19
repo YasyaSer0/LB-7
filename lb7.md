@@ -500,3 +500,95 @@ chmod +x myscript.sh
 - змінні ($name, $choice)
 - умовний оператор if
 - команди date, cal, whoami
+
+### Контрольні запитання
+
+**1. В чому відмінність між командами arch та lscpu?**
+
+Команда arch використовується для швидкого визначення архітектури системи. Вона виводить лише коротку інформацію, наприклад тип процесора (x86_64).
+
+Команда lscpu надає детальну інформацію про процесор: кількість ядер, потоків, модель процесора, кеш-пам’ять, підтримку віртуалізації та інші характеристики.
+
+Таким чином, arch - це коротка інформація, а lscpu - повна характеристика CPU.
+
+<img width="331" height="72" alt="image" src="https://github.com/user-attachments/assets/15cc3e25-3639-4618-b27f-ce0365c9cc54" />
+
+Рисунок 1 - Результат виконання команди arch
+
+<img width="913" height="713" alt="image" src="https://github.com/user-attachments/assets/b542dc2b-6751-42d7-bbb5-be150aebdfc5" />
+
+Рисунок 2 - Результат виконання команди lscpu
+
+**2. Якою командою можна отримати інформацію про стан використання RAM поточною системою?**
+
+Для перегляду використання оперативної пам’яті використовується команда:
+```bash
+free -h
+```
+Вона показує загальний обсяг пам’яті, використану, вільну та кешовану пам’ять у зручному форматі.
+
+<img width="892" height="138" alt="image" src="https://github.com/user-attachments/assets/281798c0-9875-44af-85e0-e75636a44c35" />
+
+Рисунок 3 - Результат виконання команди free -h
+
+**3. Яким чином у скриптах можна опрацьовувати змінні та створювати розгалужені та циклічні сценарії?**
+
+У Bash-скриптах змінні створюються без зазначення типу та використовуються через знак $.
+
+Для створення розгалужень застосовується конструкція if, яка дозволяє виконувати різні дії залежно від умов.
+
+Також можна використовувати цикли (for, while) для повторення дій.
+
+Наприклад, у створеному скрипті використовується оператор if для реалізації меню, де залежно від вибору користувача виконується певна команда.
+
+<img width="507" height="676" alt="image" src="https://github.com/user-attachments/assets/4a2f4519-b40a-4469-b988-6a925445eae1" />
+
+Рисунок 4 - Приклад Bash-скрипта з використанням змінних та умовного оператора if
+
+**4. Які команди для перегляду стану підключення периферійних пристроїв можна використати в терміналі?**
+
+Для перегляду підключених пристроїв у Linux використовуються такі команди:
+- lsusb - показує USB-пристрої
+- lspci - показує PCI-пристрої (відеокарта, мережа і т.д.)
+- lsmod - показує завантажені модулі ядра
+
+Ці команди дозволяють отримати інформацію про обладнання, підключене до системи.
+
+<img width="677" height="131" alt="image" src="https://github.com/user-attachments/assets/73868138-328b-4c0e-98c4-a7ca73821ba6" />
+
+Рисунок 5 - Результат виконання команди lsusb
+
+<img width="910" height="428" alt="image" src="https://github.com/user-attachments/assets/bc094f16-860a-4943-89da-fa2ab4eddca7" />
+
+Рисунок 6 - Результат виконання команди lspci
+
+<img width="935" height="741" alt="image" src="https://github.com/user-attachments/assets/f3c43167-ec54-4b69-b416-e74e19b49ef0" />
+
+Рисунок 7 - Результат виконання команди lsmod
+
+**5. Які можливості застосунку gparted?**
+
+GParted - це графічна утиліта для роботи з дисками та розділами.
+
+Основні можливості:
+- створення та видалення розділів
+- зміна розміру розділів
+- форматування дисків
+- перевірка файлових систем
+- копіювання розділів
+
+Ця програма використовується для керування дисковим простором у зручному графічному інтерфейсі.
+
+<img width="792" height="509" alt="image" src="https://github.com/user-attachments/assets/9c832dea-651a-43e5-ae18-9b31e0b1b13d" />
+
+Рисунок 8 - Інтерфейс програми GParted
+
+### Conclusion 
+
+During the laboratory work, the basic Linux commands for obtaining information about the system hardware configuration, memory usage, and connected devices were studied. Commands such as lscpu, arch, free, lsusb, and lspci were analyzed.
+
+In addition, custom Bash scripts were created to display information for the user, work with variables, read user input, and implement conditional branching using the if statement. Practical skills in creating interactive scripts with menus and user choice processing were acquired.
+
+Furthermore, the functionality of the GParted graphical tool for disk and partition management was explored.
+
+As a result, the knowledge of working in Linux was reinforced, and practical skills in scripting and system analysis were gained.
