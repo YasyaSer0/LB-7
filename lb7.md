@@ -276,7 +276,7 @@ nano greeting.sh
 
 <img width="872" height="565" alt="image" src="https://github.com/user-attachments/assets/1b43a640-c358-4ed0-b7c5-8c334c903afe" />
 
-Скрін 1: відкритий редактор nano з назвою файлу greeting.sh
+Скрін 1
 
 Додавання коду у файл:
 ```bash
@@ -416,3 +416,87 @@ chmod +x hardware.sh
 - lspci - виводить список пристроїв, підключених до PCI-шини
 - lsusb - показує USB-пристрої, підключені до системи
 - sudo fdisk -l - відображає інформацію про диски та їхні розділи
+
+#### Сценарій 3: Власний інтерактивний скриптовий сценарій
+
+У цьому завданні було створено власний Bash-скрипт, який реалізує взаємодію з користувачем через текстове меню. Сценарій запитує ім’я користувача, після чого пропонує обрати одну з доступних дій.
+
+**Хід виконання**
+
+Створення файлу:
+```bash
+nano myscript.sh
+```
+
+<img width="510" height="34" alt="image" src="https://github.com/user-attachments/assets/c8588a80-50b8-4294-a1d7-e104677ce7c5" />
+
+Скрін 1
+
+Додавання коду:
+```bash
+#!/bin/bash
+
+echo "===== MINI MENU SCRIPT ====="
+echo "Enter your name:"
+read name
+
+echo "Hello, $name!"
+echo "Choose an option:"
+echo "1 - Show current date and time"
+echo "2 - Show calendar"
+echo "3 - Show current user"
+read -p "Enter your choice: " choice
+
+if [ "$choice" = "1" ]
+then
+    echo "Current date and time:"
+    date
+elif [ "$choice" = "2" ]
+then
+    echo "Calendar:"
+    cal
+elif [ "$choice" = "3" ]
+then
+    echo "Current user:"
+    whoami
+else
+    echo "Invalid option!"
+fi
+```
+
+<img width="602" height="689" alt="image" src="https://github.com/user-attachments/assets/b59550c6-54ba-4d8f-b538-5cf00d66e708" />
+
+Скрін 2: код скрипта
+
+Надання прав:
+```bash
+chmod +x myscript.sh
+```
+<img width="494" height="42" alt="image" src="https://github.com/user-attachments/assets/b6caf866-057a-466b-9d7a-1232b98f792b" />
+
+Скрін 3
+
+Запуск:
+```bash
+./myscript.sh
+```
+
+<img width="702" height="137" alt="image" src="https://github.com/user-attachments/assets/926e805f-0977-4354-8459-62d7854ea4ea" />
+
+Скрін 4: введення імені
+
+<img width="786" height="322" alt="image" src="https://github.com/user-attachments/assets/083f4bdb-ee51-4c17-b3d8-0ca2244daad1" />
+
+Скрін 5: вибір пункту меню
+
+<img width="601" height="437" alt="image" src="https://github.com/user-attachments/assets/df4c9fd2-0913-40b5-855a-2d7aa4961754" />
+
+Скрін 6: результат (наприклад, календар)
+
+**Пояснення**
+
+Скрипт використовує:
+- read — для введення даних
+- змінні ($name, $choice)
+- умовний оператор if
+- команди date, cal, whoami
