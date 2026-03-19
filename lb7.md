@@ -306,7 +306,7 @@ chmod +x greeting.sh
 
 <img width="754" height="49" alt="image" src="https://github.com/user-attachments/assets/bb742868-6f4b-46a7-a80c-860e924892b9" />
 
-Скрін 4: команда chmod у терміналі
+Скрін 3: команда chmod у терміналі
 
 Запуск скрипта:
 ```bash
@@ -315,7 +315,7 @@ chmod +x greeting.sh
 
 <img width="1206" height="249" alt="image" src="https://github.com/user-attachments/assets/8924f886-aa18-451d-9363-cf0eda59ac7a" />
 
-Скрін 5: результат виконання скрипта
+Скрін 4: результат виконання скрипта
 
 Пояснення коду
 - #!/bin/bash - вказує, що скрипт виконується у оболонці Bash
@@ -323,3 +323,96 @@ chmod +x greeting.sh
 - $(date) - підставляє поточну дату і час
 - uname -a - виводить інформацію про систему (ОС, ядро, архітектура)
   
+#### Сценарій 2: Виведення інформації про апаратну конфігурацію системи
+
+У цьому завданні було створено скриптовий сценарій, який виводить основну інформацію про апаратну конфігурацію поточної системи. Для цього були використані команди, розглянуті в Lab 12: Understanding Computer Hardware.
+
+**Хід виконання**
+
+Створення нового файлу скрипта:
+```bash
+nano hardware.sh
+```
+
+<img width="511" height="38" alt="image" src="https://github.com/user-attachments/assets/817b66a1-d41a-4ea1-aa75-33df4c427931" />
+
+Скрін 1: відкритий редактор nano з назвою файлу hardware.sh
+
+Додавання коду у файл:
+```bash
+#!/bin/bash
+
+echo "===== HARDWARE INFORMATION ====="
+
+echo ""
+echo "CPU INFORMATION:"
+lscpu
+
+echo ""
+echo "MEMORY INFORMATION:"
+free -h
+
+echo ""
+echo "PCI DEVICES:"
+lspci
+
+echo ""
+echo "USB DEVICES:"
+lsusb
+
+echo ""
+echo "DISK INFORMATION:"
+sudo fdisk -l
+```
+
+<img width="881" height="623" alt="image" src="https://github.com/user-attachments/assets/3d58ef8a-4bb5-48ec-86ce-ef36d0f7065c" />
+
+Скрін 2: код скрипта у редакторі nano
+
+Збереження файлу:
+```bash
+Ctrl + O → Enter
+
+Ctrl + X
+```
+
+Надання прав на виконання:
+```bash
+chmod +x hardware.sh
+```
+
+<img width="501" height="36" alt="image" src="https://github.com/user-attachments/assets/6abcfb4c-343f-48d2-97cf-99b9036b9eac" />
+
+Скрін 3: команда chmod +x hardware.sh у терміналі
+
+Запуск скрипта:
+```bash
+./hardware.sh
+```
+Оскільки команда fdisk -l потребує прав адміністратора, під час виконання скрипта вводиться пароль користувача.
+
+<img width="892" height="610" alt="image" src="https://github.com/user-attachments/assets/397f282b-fea7-4cc5-a4a9-72812e8ac40b" />
+
+Скрін 4: початок виконання скрипта
+
+<img width="860" height="611" alt="image" src="https://github.com/user-attachments/assets/10926268-a09c-4c04-b94c-35b6ad210f0e" />
+
+Скрін 5: виведення інформації про процесор і пам’ять
+
+<img width="875" height="618" alt="image" src="https://github.com/user-attachments/assets/3e42eea6-42df-4520-b256-238b43a5231e" />
+<img width="873" height="619" alt="image" src="https://github.com/user-attachments/assets/61885d67-7fbb-497d-8a9f-66ca68e91317" />
+
+Скрін 6: виведення інформації про PCI- та USB-пристрої
+
+<img width="880" height="596" alt="image" src="https://github.com/user-attachments/assets/cecd588c-a445-4323-878c-1006a4dab066" />
+
+Скрін 7: виведення інформації про диски та розділи
+
+Пояснення коду
+- #!/bin/bash - вказує, що файл є Bash-скриптом
+- echo "===== HARDWARE INFORMATION =====" - виводить заголовок сценарію
+- lscpu - відображає інформацію про процесор
+- free -h - показує використання оперативної пам’яті у зручному форматі
+- lspci - виводить список пристроїв, підключених до PCI-шини
+- lsusb - показує USB-пристрої, підключені до системи
+- sudo fdisk -l - відображає інформацію про диски та їхні розділи
